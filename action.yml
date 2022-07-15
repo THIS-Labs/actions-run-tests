@@ -1,0 +1,15 @@
+name: 'Run unittests'
+description: 'Runs unittests'
+runs:
+  using: "composite"
+  steps:
+    # Add src to PYTHONPATH to resolve imports
+    - name: Set pythonpath
+      shell: bash
+      run: |
+        echo "PYTHONPATH=./src" >> $GITHUB_ENV
+
+    - name: Run unit tests
+      shell: bash
+      run: |
+        python -m unittest discover -s ./tests/unit_tests -t ./tests/unit_tests
