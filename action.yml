@@ -12,4 +12,4 @@ runs:
     - name: Run unit tests
       shell: bash
       run: |
-        python -m unittest discover -s ./tests/unit_tests -t ./tests/unit_tests
+        python -m unittest discover -s ./api/tests/test_scripts/unit_tests -t ./api/tests/test_scripts/unit_tests
