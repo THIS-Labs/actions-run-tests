@@ -3,6 +3,16 @@ Composite GitHub action to run tests in CI/CD pipelines
 
 ## Tags
 
+Use tag v0.1 for normal stacks. Use v0.2 for core.
+
+### Usage
+
+Use the tag in the github workflow for the stack in both the feature and release
+yaml files:
+
+    - name: Run tests
+      uses: THIS-Institute/actions-run-tests@v0.1
+
 ### v0.1
 
 This tag runs a command that finds tests in repos that have been set up using 
@@ -33,10 +43,3 @@ tree that looks like
                 └── test_scripts/
                     └── unit_tests/
                         └── test_something.py
-
-
-Use the tag in the github workflow for the stack in both the feature and release
-yaml files:
-
-    - name: Run tests
-      uses: THIS-Institute/actions-run-tests@v0.1
