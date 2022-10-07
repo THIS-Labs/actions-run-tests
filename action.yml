@@ -3,11 +3,11 @@ description: 'Runs unittests'
 runs:
   using: "composite"
   steps:
-    # Add src to PYTHONPATH to resolve imports
+    # Add api/endpoints to PYTHONPATH to resolve imports
     - name: Set pythonpath
       shell: bash
       run: |
-        echo "PYTHONPATH=./src" >> $GITHUB_ENV
+        echo "PYTHONPATH=./api/endpoints" >> $GITHUB_ENV
 
     - name: Run unit tests
       shell: bash
