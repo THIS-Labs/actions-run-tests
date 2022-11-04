@@ -11,4 +11,4 @@ runs:
     - name: Run unit tests
       shell: bash
       run: |
-        python -m unittest discover -s ./api/tests/test_scripts/unit_tests -t ./api/tests/test_scripts/unit_tests
+        python -m unittest api.tests.test_scripts.unit_tests.test_user_group  
