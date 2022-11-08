@@ -7,7 +7,7 @@ runs:
     - name: Set pythonpath
       shell: bash
       run: |
-        echo "PYTHONPATH=./api/tests/test_scripts:./api/endpoints:./api/tests:$PYTHONPATH" >> $GITHUB_ENV
+        echo "PYTHONPATH=./api:./api/tests/test_scripts:./api/endpoints:./api/tests:$PYTHONPATH" >> $GITHUB_ENV
 
     - name: Run unit tests
       shell: bash
