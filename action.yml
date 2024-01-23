@@ -1,15 +1,21 @@
 name: 'Run unittests'
 description: 'Runs unittests'
+inputs:
+  python_path:
+    description: 'PYTHONPATH for test to find source code'
+    required: true
+  tests_path:
+    description: 'path for unittest to discover tests'
+    required: true
 runs:
   using: "composite"
   steps:
-    # Add src to PYTHONPATH to resolve imports
     - name: Set pythonpath
       shell: bash
       run: |
-        echo "PYTHONPATH=./src" >> $GITHUB_ENV
+        echo "PYTHONPATH=${{ inputs.python_path }}:$PYTHONPATH" >> $GITHUB_ENV
 
     - name: Run unit tests
       shell: bash
       run: |
-        python -m unittest discover -s ./tests/unit_tests -t ./tests/unit_tests
+        python -m unittest discover -s ${{ inputs.tests_path }} -t ${{ inputs.tests_path }}
