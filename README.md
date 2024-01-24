@@ -28,7 +28,7 @@ thiscovery-skeleton, i.e the location of the unit tests looks like
                 └── test_something.py
 
 
-### v0.2
+### v0.11
 
 This tag runs a command that finds tests in thiscovery-core, with a directory
 tree that looks like
@@ -43,3 +43,17 @@ tree that looks like
                 └── test_scripts/
                     └── unit_tests/
                         └── test_something.py
+
+### v0.2
+
+This tag requires two inputs to find the source code and the tests files
+
+For example in core:
+
+    python_path: ./api:./api/tests/test_scripts:./api/endpoints:./api/tests:./layers/common
+    test_path: ./api/tests/test_scripts/unit_tests 
+
+And in refactored stacks:
+
+    python_path: ./src:./functions
+    test_path: ./tests/unit_tests
